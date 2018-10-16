@@ -7,19 +7,15 @@ const options = {
   }
 };
 
-const parse = rp(options)
-  .then($ => {
+const parse = () =>
+  rp(options).then($ => {
     const today = new Date().getDay();
-    const food = $(`day-tab${today}`)
+    const food = $(`#day-tab${today}`)
       .find("h2")
       .find("span");
     const soup = food.first().text();
     const main = food.last().text();
-    console.log(soup, main);
     return { soup, main };
-  })
-  .catch(err => {
-    console.log(err);
   });
 
 module.exports.parse = parse;

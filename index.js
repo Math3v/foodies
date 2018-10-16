@@ -9,7 +9,7 @@ app.get("/", function(req, res) {
 
 app.get("/forkys", function(req, res) {
   forkysParser()
-    .then(lunch => res.send(`${lunch.soup}, ${lunch.main}`))
+    .then(({soup, main}) => res.send(`${soup}, ${main}`))
     .catch(err => res.send(err));
 });
 

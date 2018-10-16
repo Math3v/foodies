@@ -1,8 +1,11 @@
 service: aws-foodies
 
+plugins:
+  - serverless-offline
+
 provider:
   name: aws
-  runtime: nodejs8.9
+  runtime: nodejs8.10
   stage: dev
   region: eu-west-2
 
