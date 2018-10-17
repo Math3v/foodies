@@ -5,7 +5,7 @@ Foodies is a Serverless Slack Application for fetching today's lunch menus from 
 # How to install
  - `npm install -g serverless`
  - `npm install`
- - `sls offline start`
+ - `npm start` or `sls offline start`
 
 # How to contribute
  - Create a parser for you favorite restaurant.

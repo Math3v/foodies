@@ -1,0 +1,31 @@
+{
+  "name": "aws-foodies",
+  "version": "1.0.0",
+  "description": "Foodies is a Serverless Slack Application for fetching today's lunch menus from local restaurants in Brno.",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.16.4",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2",
+    "serverless-http": "^1.6.0",
+    "serverless-offline": "^3.27.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "sls offline start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Math3v/foodies.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Math3v/foodies/issues"
+  },
+  "homepage": "https://github.com/Math3v/foodies#readme"
+}
