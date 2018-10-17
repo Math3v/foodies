@@ -1,21 +1,25 @@
 const serverless = require("serverless-http");
 const express = require("express");
+const bodyParser = require("body-parser");
+const commandHandler = require("./command-handler").commandHandler;
+
 const app = express();
-const forkysParser = require("./parser/forkys").parse;
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", function(req, res) {
   res.send("Hello World!");
 });
 
 app.get("/forkys", function(req, res) {
-  forkysParser()
-    .then(({soup, main}) => res.send(`${soup}, ${main}`))
-    .catch(err => res.send(err));
+  commandHandler({ command: 'forkys' }).then(r => res.json(r));
 });
 
 app.post("/", function(req, res) {
-  console.log("Received post with ", req);
-  res.send(req);
+  const { text } = req.body;
+
+  commandHandler({ command: text }).then(r => res.json(r));
 });
 
 module.exports.handler = serverless(app);
