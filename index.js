@@ -1,7 +1,7 @@
 const serverless = require("serverless-http");
 const express = require("express");
 const bodyParser = require("body-parser");
-const commandHandler = require("./slack").commandHandler;
+const { allHandler, commandHandler } = require("./slack");
 
 const app = express();
 
@@ -16,6 +16,15 @@ const defaultResponse = {
 
 app.get("/", function(req, res) {
   res.send("Hello World!");
+});
+
+app.get("/all", function(req, res) {
+  allHandler().then(response =>
+    res.json({
+      ...defaultResponse,
+      ...response
+    })
+  );
 });
 
 app.get("/forkys", function(req, res) {
