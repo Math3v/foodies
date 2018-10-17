@@ -15,8 +15,8 @@ async function commandHandler({ command }) {
   }
 
   try {
-    const { soup, main } = await parser();
-    return { text: `${soup}, ${main}` };
+    const { soups, mains } = await parser();
+    return { text: `Soups: ${soups}\nMains: ${mains}` };
   } catch (error) {
     return { text: `Error: ${error}` };
   }
