@@ -13,9 +13,9 @@ const parse = () =>
     const food = $(`#day-tab${today}`)
       .find("h2")
       .find("span");
-    const soups = food.first().text();
-    const mains = food.last().text();
-    return { soups, mains };
+    const soup = food.first().text();
+    const main = food.last().text();
+    return { soups: [soup], mains: [main] };
   });
 
 module.exports.parse = parse;

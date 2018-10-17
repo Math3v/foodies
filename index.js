@@ -1,7 +1,7 @@
 const serverless = require("serverless-http");
 const express = require("express");
 const bodyParser = require("body-parser");
-const commandHandler = require("./slack").commandHandler;
+const { commandHandler } = require("./slack");
 
 const app = express();
 

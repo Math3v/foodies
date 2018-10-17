@@ -1,5 +1,9 @@
 const forkysParser = require("./parser/forkys").parse;
 
+function menuToText({ soups, mains }) {
+  return `*Soups*:${soups.join(", ")}\n*Mains:*${mains.join(", ")}`;
+}
+
 function getParser(command) {
   if (command === "forkys") {
     return forkysParser;
@@ -15,8 +19,8 @@ async function commandHandler({ command }) {
   }
 
   try {
-    const { soups, mains } = await parser();
-    return { text: `*Soups:* ${soups}\n*Mains:* ${mains}` };
+    const menu = await parser();
+    return { text: menuToText(menu) };
   } catch (error) {
     return { text: `Error: ${error}` };
   }
