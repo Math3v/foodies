@@ -1,12 +1,15 @@
 const forkysParser = require("./parser/forkys").parse;
+const zlataLodParser = require("./parser/zlata-lod").parse;
 
 function menuToText({ soups, mains }) {
-  return `*Soups*:${soups.join(", ")}\n*Mains:*${mains.join(", ")}`;
+  return `*Soups*:\n${soups.join("\n")}\n*Mains:*\n${mains.join("\n")}`;
 }
 
 function getParser(command) {
   if (command === "forkys") {
     return forkysParser;
+  } else if (command === "lod") {
+    return zlataLodParser;
   } else {
     return undefined;
   }

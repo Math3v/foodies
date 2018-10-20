@@ -27,6 +27,15 @@ app.get("/forkys", function(req, res) {
   );
 });
 
+app.get("/lod", function(req, res) {
+  commandHandler({ command: "lod" }).then(response =>
+    res.json({
+      ...defaultResponse,
+      ...response
+    })
+  );
+});
+
 app.post("/", function(req, res) {
   const { text } = req.body;
 
