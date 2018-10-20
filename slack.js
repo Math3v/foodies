@@ -1,24 +1,23 @@
 const forkysParser = require("./parser/forkys").parse;
 const zlataLodParser = require("./parser/zlata-lod").parse;
 
+const parserMap = {
+  'forkys': forkysParser,
+  'lod': zlataLodParser,
+};
+
 function menuToText({ soups, mains }) {
   return `*Soups*:\n${soups.join("\n")}\n*Mains:*\n${mains.join("\n")}`;
 }
 
 function getParser(command) {
-  if (command === "forkys") {
-    return forkysParser;
-  } else if (command === "lod") {
-    return zlataLodParser;
-  } else {
-    return undefined;
-  }
+  return parserMap[command];
 }
 
 async function commandHandler({ command }) {
   const parser = getParser(command);
   if (!parser) {
-    return { text: "Not Supported" };
+    return { text: `Command '${command}' not supported.` };
   }
 
   try {
