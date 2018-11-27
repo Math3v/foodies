@@ -1,5 +1,7 @@
 ## Foodies
 
+[![DeepScan grade](https://deepscan.io/api/teams/739/projects/3731/branches/32437/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=739&pid=3731&bid=32437)
+
 Foodies is a Serverless Slack Application for fetching today's lunch menus from local restaurants in Brno.
 
 # How to install
