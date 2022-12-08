@@ -4,9 +4,9 @@
   "description": "Foodies is a Serverless Slack Application for fetching today's lunch menus from local restaurants in Brno.",
   "main": "index.js",
   "dependencies": {
-    "body-parser": "^1.18.3",
+    "body-parser": "^1.20.1",
     "cheerio": "^1.0.0-rc.2",
-    "express": "^4.16.4",
+    "express": "^4.18.2",
     "request": "^2.88.0",
     "request-promise": "^4.2.2",
     "serverless-http": "^1.6.0",
